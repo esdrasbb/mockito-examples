@@ -14,6 +14,8 @@ import static org.mockito.Mockito.*;
 @SuppressWarnings("unchecked")
 public class MockitoGeneralTest {
 
+    //Fluent interface
+
     @Test
     public void usoVerify() {
         List mockedList = mock(List.class);
