@@ -14,7 +14,8 @@ import static org.mockito.Mockito.*;
 @SuppressWarnings("unchecked")
 public class MockitoGeneralTest {
 
-    //Fluent interface
+    //Alguns comandos do Mockito na prática!!!
+    // Fluent interface
 
     @Test
     public void usoVerify() {
@@ -33,7 +34,6 @@ public class MockitoGeneralTest {
         verify(mockedList, atLeast(2)).add("dois"); //called at least twice
         verify(mockedList, times(2)).add("dois"); //called two times;
         verify(mockedList, atMost(1)).add("um"); //called at most 3 times
-
     }
 
     @Test
