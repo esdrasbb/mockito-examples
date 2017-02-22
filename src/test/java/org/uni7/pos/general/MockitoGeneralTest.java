@@ -16,7 +16,7 @@ public class MockitoGeneralTest {
 
     //Alguns comandos do Mockito na prática!!!
     // Fluent interface
-
+	
     @Test
     public void usoVerify() {
         List mockedList = mock(List.class);
