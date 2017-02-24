@@ -1,18 +1,15 @@
 package org.uni7.pos.general;
 
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import org.junit.Test;
+import static org.mockito.Mockito.*;
 
+@SuppressWarnings("rawtypes")
 public class MockitoGeneralTestPart1 {
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
 	public void mockInterfaceTest(){
 		//Podemos fazer mock de uma interface
@@ -27,11 +24,10 @@ public class MockitoGeneralTestPart1 {
 		verify(mockedInterfaceList).add("elemento 1");
 		verify(mockedInterfaceList).clear();
 	}
-	
-	@SuppressWarnings("rawtypes")
+
 	@Test
 	public void mockConcreteClassTest(){
-		
+
 		//Também podemos mockar uma classe concreta
 		LinkedList mockedLinkedList = mock(LinkedList.class);
 
@@ -45,12 +41,11 @@ public class MockitoGeneralTestPart1 {
 		verify(mockedLinkedList).get(0);
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Test(expected=RuntimeException.class)
 	public void mockExceptionTest1(){
-		
+
 		List mockedList = mock(List.class);
-		
+
 		//Também podemos utilizar a função when para lançar uma exceção
 		//ao chamar um método do objeto mockado
 		when(mockedList.get(1)).thenThrow(new RuntimeException());
@@ -58,12 +53,11 @@ public class MockitoGeneralTestPart1 {
 
 	}
 
-	@SuppressWarnings("rawtypes")
-	@Test(expected = RuntimeException.class) 
+	@Test(expected = RuntimeException.class)
 	public void mockExceptionTest2() {
-		
+
 		List mockedList = mock(List.class);
-		
+
 		//A função doThrow também pode utilizada para lançar uma
 		//exceção quando um método do objeto mockado é invocado
 		//Deve ser usado para métodos com retorno void
